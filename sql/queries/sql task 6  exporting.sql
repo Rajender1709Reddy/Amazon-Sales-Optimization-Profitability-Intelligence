@@ -77,3 +77,16 @@ COUNT(*) AS total_orders,
 ROUND(SUM(amount),2) AS total_revenue
 FROM amazon_sales_db
 GROUP BY fulfilment;
+
+SELECT *
+FROM amazon_sales_db;
+
+SELECT COUNT(*) AS total_rows
+FROM amazon_sales_db;
+
+SELECT *
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/amazon_sales_sql.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM amazon_sales_db;
